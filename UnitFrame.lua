@@ -176,14 +176,14 @@ end
 
 local function LibEventCallback(self, event, ... )
     local arg1, arg2, arg3, arg4, arg5 = ...;
-    if not UnitExists(self.unit) then
+    if ( not UnitExists(self.unit) ) then
         return;
     end
 
-    if (event == "HealComm_HealStarted" or event == "HealComm_HealStopped" ) then
+    if ( event == "HealComm_HealStarted" or event == "HealComm_HealStopped" ) then
         C_TimeCallback(self);
-    elseif event == "EffectApplied" then
-        if arg1 == UnitGUID(self.unit) then
+    elseif ( event == "EffectApplied" ) then
+        if ( arg1 == UnitGUID(self.unit) ) then
             C_TimeCallback(self);
         end
     elseif ( event == "HealComm_HealUpdated" )
@@ -191,7 +191,7 @@ local function LibEventCallback(self, event, ... )
         or ( event == "HealComm_HealDelayed" )
         or ( event == "HealComm_ModifierChanged" )
         or ( event == "HealComm_GUIDDisappeared" ) then
-            if arg5 == UnitGUID(self.unit) then
+            if ( arg5 == UnitGUID(self.unit) ) then
                 C_TimeCallback(self);
             end
     end
@@ -262,8 +262,9 @@ local function BlizzardLayerUnitFrame_Initialize(self)
 	if ( self.unit == "player" ) then
 		self.PlayerFrameHealthBarAnimatedLoss = CreateFrame("StatusBar", nil, self, "PlayerFrameHealthBarAnimatedLossTemplate");
 		self.PlayerFrameHealthBarAnimatedLoss:SetUnitHealthBar("player", self.healthbar);
+		self.PlayerFrameHealthBarAnimatedLoss:SetFrameLevel(self.healthbar:GetFrameLevel() - 1)
 	end
-	UnitFrame_Update(self)
+	UnitFrame_Update(self);
     self.layerInit = true;
 end
 
