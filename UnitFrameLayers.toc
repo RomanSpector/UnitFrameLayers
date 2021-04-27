@@ -1,0 +1,7 @@
+## Interface: 30300
+## Title: UnitFrame
+## Author: RomanSpector 
+## Version: 1.0
+## Notes: Добавление анимации и текстур предикт лечения / абсорба и т.д. к стандартным blizz-frames.
+
+UnitFrame.xml
