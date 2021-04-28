@@ -214,16 +214,19 @@ local function BlizzardLayerUnitFrame_Initialize(self)
         return;
     end
 
-    self.myHealPredictionBar = self:CreateTexture("$parentMyHealPrediction", "BORDER", "MyHealPredictionBarTemplate");
-    self.otherHealPredictionBar = self:CreateTexture("$parentOtherHealPrediction", "BORDER", "OtherHealPredictionBarTemplate");
-    self.totalAbsorbBar = self:CreateTexture("$TotalAbsorbBar", "OVERLAY", "TotalAbsorbBarTemplate");
-    self.totalAbsorbBarOverlay = self:CreateTexture("$TotalAbsorbBarOverlayTemplate", "OVERLAY", "TotalAbsorbBarOverlayTemplate");
-    self.overAbsorbGlow = self:CreateTexture("$OverAbsorbGlow", "OVERLAY", "OverAbsorbGlowTemplate");
-    self.overHealAbsorbGlow = self:CreateTexture("$OverHealAbsorbGlowTemplate", "OVERLAY", "OverHealAbsorbGlowTemplate");
-    self.healAbsorbBar = self:CreateTexture("$HealAbsorbBarTemplate", "OVERLAY", "HealAbsorbBarTemplate");
-    self.healAbsorbBarLeftShadow = self:CreateTexture("$HealAbsorbBarLeftShadowTemplate", "OVERLAY", "HealAbsorbBarLeftShadowTemplate");
-    self.healAbsorbBarRightShadow = self:CreateTexture("$HealAbsorbBarRightShadowTemplate", "OVERLAY", "HealAbsorbBarRightShadowTemplate");
-    self.myManaCostPredictionBar = self:CreateTexture("$MyManaCostPredictionBarTemplate", "OVERLAY", "MyManaCostPredictionBarTemplate");
+	self.Prediction = CreateFrame("Frame", nil, self, "StatusBarHealPredictionTemplate");
+	local prediction = self.Prediction
+
+    self.myHealPredictionBar = prediction.myHealPredictionBar;
+    self.otherHealPredictionBar = prediction.otherHealPredictionBar;
+    self.totalAbsorbBar = prediction.totalAbsorbBar;
+    self.totalAbsorbBarOverlay = prediction.totalAbsorbBarOverlay;
+    self.overAbsorbGlow = prediction.overAbsorb.overAbsorbGlow;
+    self.overHealAbsorbGlow = prediction.overHealAbsorbGlow;
+    self.healAbsorbBar = prediction.healAbsorbBar;
+    self.healAbsorbBarLeftShadow = prediction.healAbsorbBarLeftShadow;
+    self.healAbsorbBarRightShadow = prediction.healAbsorbBarRightShadow;
+    --self.myManaCostPredictionBar = prediction.myManaCostPredictionBar;
 
     self.myHealPredictionBar:ClearAllPoints();
 
@@ -231,7 +234,7 @@ local function BlizzardLayerUnitFrame_Initialize(self)
 
     self.totalAbsorbBar:ClearAllPoints();
 
-    self.myManaCostPredictionBar:ClearAllPoints();
+    --self.myManaCostPredictionBar:ClearAllPoints();
 
     self.totalAbsorbBar.overlay = self.totalAbsorbBarOverlay;
     self.totalAbsorbBarOverlay:SetAllPoints(self.totalAbsorbBar);
