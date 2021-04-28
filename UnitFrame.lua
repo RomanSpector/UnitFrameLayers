@@ -210,7 +210,7 @@ end
 
 local function BlizzardLayerUnitFrame_Initialize(self)
 
-    if ( self.layerInit ) then
+    if ( self.myHealPredictionBar ) then
         return;
     end
 
@@ -226,8 +226,10 @@ local function BlizzardLayerUnitFrame_Initialize(self)
     self.healAbsorbBar = prediction.healAbsorbBar;
     self.healAbsorbBarLeftShadow = prediction.healAbsorbBarLeftShadow;
     self.healAbsorbBarRightShadow = prediction.healAbsorbBarRightShadow;
-    --self.myManaCostPredictionBar = prediction.myManaCostPredictionBar;
 
+	if ( self.unit == "player" ) then 
+    	--self.myManaCostPredictionBar = prediction.myManaCostPredictionBar;
+	end
     self.myHealPredictionBar:ClearAllPoints();
 
     self.otherHealPredictionBar:ClearAllPoints();
@@ -243,16 +245,13 @@ local function BlizzardLayerUnitFrame_Initialize(self)
     self.overAbsorbGlow:ClearAllPoints();
 	self.overAbsorbGlow:SetWidth(16);
     self.overAbsorbGlow:SetPoint("TOPLEFT", self.healthbar, "TOPRIGHT", -7, 0);
-    self.overAbsorbGlow:SetPoint("BOTTOMLEFT", self.healthbar, "BOTTOMRIGHT",
-                                 -7, 0);
+    self.overAbsorbGlow:SetPoint("BOTTOMLEFT", self.healthbar, "BOTTOMRIGHT",  -7, 0);
 
     self.healAbsorbBar:ClearAllPoints();
-    self.healAbsorbBar:SetTexture("Interface\\RaidFrame\\Absorb-Fill", true,
-                                  true);
+    self.healAbsorbBar:SetTexture("Interface\\RaidFrame\\Absorb-Fill", true, true);
 
     self.overHealAbsorbGlow:ClearAllPoints();
-    self.overHealAbsorbGlow:SetPoint("BOTTOMRIGHT", self.healthbar,
-                                     "BOTTOMLEFT", 7, 0);
+    self.overHealAbsorbGlow:SetPoint("BOTTOMRIGHT", self.healthbar, "BOTTOMLEFT", 7, 0);
     self.overHealAbsorbGlow:SetPoint("TOPRIGHT", self.healthbar, "TOPLEFT", 7, 0);
 
     self.healAbsorbBarLeftShadow:ClearAllPoints();
@@ -267,8 +266,8 @@ local function BlizzardLayerUnitFrame_Initialize(self)
 		self.PlayerFrameHealthBarAnimatedLoss:SetUnitHealthBar("player", self.healthbar);
 		self.PlayerFrameHealthBarAnimatedLoss:SetFrameLevel(self.healthbar:GetFrameLevel() - 1)
 	end
+
 	UnitFrame_Update(self);
-    self.layerInit = true;
 end
 
 hooksecurefunc("UnitFrame_OnEvent", BlizzardLayerUnitFrame_Initialize);

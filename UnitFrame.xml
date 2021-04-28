@@ -37,20 +37,22 @@
     <Size x="16" y="0"/>
   </Texture>
 
-  <Frame name="StatusBarHealPredictionTemplate" setAllPoints="true" virtual="true">
+  <Frame name="StatusBarHealPredictionTemplate" frameLevel="1" setAllPoints="true" virtual="true">
     <Layers>
-      <Layer level="BORDER">
+      <Layer level="BACKGOURND">
         <Texture name="$parentTotalAbsorbBar" parentKey="totalAbsorbBar" inherits="TotalAbsorbBarTemplate"/>
         <Texture name="$parentHealAbsorbBarRightShadow" parentKey="healAbsorbBarRightShadow" inherits="HealAbsorbBarRightShadowTemplate"/>
         <Texture name="$parentHealAbsorbBarLeftShadow" parentKey="healAbsorbBarLeftShadow" inherits="HealAbsorbBarLeftShadowTemplate"/>
       </Layer>
-      <Layer level="ATWORK">
+      <Layer level="BORDER">
         <Texture name="$parentOverHealAbsorbGlow" parentKey="overHealAbsorbGlow" inherits="OverHealAbsorbGlowTemplate"/>
-        <Texture name="$parentTotalAbsorbBarOverlay" parentKey="totalAbsorbBarOverlay" inherits="TotalAbsorbBarOverlayTemplate"/>
         <Texture name="$parentHealAbsorbBar" parentKey="healAbsorbBar" inherits="HealAbsorbBarTemplate"/>
         <Texture name="$parentFrameMyHealPredictionBar" parentKey="myHealPredictionBar" inherits="MyHealPredictionBarTemplate"/>
         <Texture name="$parentFrameOtherHealPredictionBar" parentKey="otherHealPredictionBar" inherits="OtherHealPredictionBarTemplate"/>
         <!-- <Texture name="$parentrameManaCostPredictionBar" parentKey="myManaCostPredictionBar" inherits="MyManaCostPredictionBarTemplate"/> -->
+      </Layer>
+      <Layer level="ATWORK">
+        <Texture name="$parentTotalAbsorbBarOverlay" parentKey="totalAbsorbBarOverlay" inherits="TotalAbsorbBarOverlayTemplate"/>
       </Layer>
     </Layers>
     <Frames setAllPoints="true">
