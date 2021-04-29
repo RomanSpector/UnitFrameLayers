@@ -4,4 +4,6 @@
 ## Version: 1.0
 ## Notes: Добавление анимации и текстур предикт лечения / абсорба и т.д. к стандартным blizz-frames.
 
+Dependence\load.xml
+embeds.xml
 UnitFrame.xml

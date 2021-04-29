@@ -1,0 +1,12 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\FrameXML\UI.xsd">
+
+  <Include file="BuilderSpenderFrame.xml"/>
+
+  <Script file="MathUtil.lua"/>
+  <Script file="Mixin.lua"/>
+  <Script file="SpellPowerCost.lua"/>
+  <Script file="AnimatedHealthLossMixin.lua"/>
+
+</Ui>

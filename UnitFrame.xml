@@ -1,15 +1,6 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
 ..\FrameXML\UI.xsd">
-  <Script file="Libs\LibStub\LibStub.lua"/>
-  <Include file="Libs\CallbackHandler-1.0\CallbackHandler-1.0.xml"/>
-  <Include file="Libs\AceComm-3.0\AceComm-3.0.xml"/>
-  <Include file="Libs\AceTimer-3.0\AceTimer-3.0.xml"/>
-  <Include file="Libs\AceSerializer-3.0\AceSerializer-3.0.xml"/>
-  <Include file="Libs\LibHealComm-4.0\LibHealComm-4.0.xml"/>
-  <Include file="Libs\AbsorbsMonitor-1.0\AbsorbsMonitor-1.0.xml"/>
-
-  <Script file="AnimatedHealthLossMixin.lua"/>
   <Script file="UnitFrame.lua"/>
 
   <Texture name="MyHealPredictionBarTemplate" virtual="true" file="Interface\TargetingFrame\UI-StatusBar">
@@ -21,45 +12,45 @@
   <Texture name="OtherHealPredictionBarTemplate" virtual="true" file="Interface\TargetingFrame\UI-StatusBar">
     <Color r="0.0" g="0.631" b="0.557"/>
   </Texture>
-  <Texture name="TotalAbsorbBarTemplate" virtual="true" file="Interface\AddOns\UnitFrameLayers\RaidFrame\Shield-Fill"/>
+  <Texture name="TotalAbsorbBarTemplate" virtual="true" file="Interface\AddOns\UnitFrameLayers\Textures\Shield-Fill"/>
   <Texture name="HealAbsorbBarTemplate" virtual="true"/>
-  <Texture name="HealAbsorbBarLeftShadowTemplate" virtual="true" file="Interface\AddOns\UnitFrameLayers\RaidFrame\Absorb-Edge"/>
-  <Texture name="HealAbsorbBarRightShadowTemplate" virtual="true" file="Interface\AddOns\UnitFrameLayers\RaidFrame\Absorb-Edge">
+  <Texture name="HealAbsorbBarLeftShadowTemplate" virtual="true" file="Interface\AddOns\UnitFrameLayers\Textures\Absorb-Edge"/>
+  <Texture name="HealAbsorbBarRightShadowTemplate" virtual="true" file="Interface\AddOns\UnitFrameLayers\Textures\Absorb-Edge">
     <TexCoords left="1" right="0" top="0" bottom="1"/>
   </Texture>
 
   <!--The tile size is set up in UnitFrame_Initialize-->
-  <Texture name="TotalAbsorbBarOverlayTemplate" virtual="true" file="Interface\AddOns\UnitFrameLayers\RaidFrame\Shield-Overlay" vertTile="true" horizTile="true"/>
-  <Texture name="OverAbsorbGlowTemplate" virtual="true" file="Interface\AddOns\UnitFrameLayers\RaidFrame\Shield-Overshield" alphaMode="ADD">
+  <Texture name="TotalAbsorbBarOverlayTemplate" virtual="true" file="Interface\AddOns\UnitFrameLayers\Textures\Shield-Overlay" vertTile="true" horizTile="true"/>
+  <Texture name="OverAbsorbGlowTemplate" virtual="true" file="Interface\AddOns\UnitFrameLayers\Textures\Shield-Overshield" alphaMode="ADD">
     <Size x="16" y="0"/>
   </Texture>
-  <Texture name="OverHealAbsorbGlowTemplate" virtual="true" file="Interface\AddOns\UnitFrameLayers\RaidFrame\Absorb-Overabsorb" alphaMode="ADD">
+  <Texture name="OverHealAbsorbGlowTemplate" virtual="true" file="Interface\AddOns\UnitFrameLayers\Textures\Absorb-Overabsorb" alphaMode="ADD">
     <Size x="16" y="0"/>
   </Texture>
 
   <Frame name="StatusBarHealPredictionTemplate" frameLevel="1" setAllPoints="true" virtual="true">
     <Layers>
       <Layer level="BACKGOURND">
-        <Texture name="$parentTotalAbsorbBar" parentKey="totalAbsorbBar" inherits="TotalAbsorbBarTemplate"/>
-        <Texture name="$parentHealAbsorbBarRightShadow" parentKey="healAbsorbBarRightShadow" inherits="HealAbsorbBarRightShadowTemplate"/>
-        <Texture name="$parentHealAbsorbBarLeftShadow" parentKey="healAbsorbBarLeftShadow" inherits="HealAbsorbBarLeftShadowTemplate"/>
+        <Texture name="$parentTotalAbsorbBar" inherits="TotalAbsorbBarTemplate"/>
+        <Texture name="$parentHealAbsorbBarRightShadow" inherits="HealAbsorbBarRightShadowTemplate"/>
+        <Texture name="$parentHealAbsorbBarLeftShadow" inherits="HealAbsorbBarLeftShadowTemplate"/>
       </Layer>
       <Layer level="BORDER">
-        <Texture name="$parentOverHealAbsorbGlow" parentKey="overHealAbsorbGlow" inherits="OverHealAbsorbGlowTemplate"/>
-        <Texture name="$parentHealAbsorbBar" parentKey="healAbsorbBar" inherits="HealAbsorbBarTemplate"/>
-        <Texture name="$parentFrameMyHealPredictionBar" parentKey="myHealPredictionBar" inherits="MyHealPredictionBarTemplate"/>
-        <Texture name="$parentFrameOtherHealPredictionBar" parentKey="otherHealPredictionBar" inherits="OtherHealPredictionBarTemplate"/>
-        <!-- <Texture name="$parentrameManaCostPredictionBar" parentKey="myManaCostPredictionBar" inherits="MyManaCostPredictionBarTemplate"/> -->
+        <Texture name="$parentOverHealAbsorbGlow" inherits="OverHealAbsorbGlowTemplate"/>
+        <Texture name="$parentHealAbsorbBar" inherits="HealAbsorbBarTemplate"/>
+        <Texture name="$parentFrameMyHealPredictionBar" inherits="MyHealPredictionBarTemplate"/>
+        <Texture name="$parentFrameOtherHealPredictionBar" inherits="OtherHealPredictionBarTemplate"/>
+        <Texture name="$parentFrameManaCostPredictionBar" inherits="MyManaCostPredictionBarTemplate"/>
       </Layer>
       <Layer level="ATWORK">
-        <Texture name="$parentTotalAbsorbBarOverlay" parentKey="totalAbsorbBarOverlay" inherits="TotalAbsorbBarOverlayTemplate"/>
+        <Texture name="$parentTotalAbsorbBarOverlay" inherits="TotalAbsorbBarOverlayTemplate"/>
       </Layer>
     </Layers>
     <Frames setAllPoints="true">
-      <Frame parentKey="overAbsorb">
+      <Frame name="$parentFrameOverAbsorb" frameLevel="3">
         <Layers>
           <Layer level="OVERLAY">
-            <Texture name="$parentOverAbsorbGlow" parentKey="overAbsorbGlow" inherits="OverAbsorbGlowTemplate"/>
+            <Texture name="$parentGlow" inherits="OverAbsorbGlowTemplate"/>
           </Layer>
         </Layers>
       </Frame>
@@ -75,5 +66,13 @@
       </OnLoad>
     </Scripts>
   </StatusBar>
+
+
+  <Frame name="FullPowerFrameTemplate" inherits="FullResourcePulseFrame" virtual="true">
+    <Size x="119" y="12"/>
+    <Anchors>
+      <Anchor point="TOPRIGHT"/>
+    </Anchors>
+  </Frame>
 
 </Ui>
