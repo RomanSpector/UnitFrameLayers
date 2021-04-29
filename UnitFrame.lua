@@ -5,12 +5,9 @@ local LibTimer   = LibStub:GetLibrary("AceTimer-3.0");
 local callbackTime = 0.1;
 
 PowerBarColor = PowerBarColor or {};
-PowerBarColor["MANA"] = { r = 0.00, g = 0.00, b = 1.00 };
 PowerBarColor["RAGE"] = { r = 1.00, g = 0.00, b = 0.00, fullPowerAnim=true };
 PowerBarColor["FOCUS"] = { r = 1.00, g = 0.50, b = 0.25, fullPowerAnim=true };
 PowerBarColor["ENERGY"] = { r = 1.00, g = 1.00, b = 0.00, fullPowerAnim=true };
-PowerBarColor["RUNES"] = { r = 0.50, g = 0.50, b = 0.50 };
-PowerBarColor["RUNIC_POWER"] = { r = 0.00, g = 0.82, b = 1.00 };
 
 function GetPowerBarColor(powerType)
 	return PowerBarColor[powerType];
