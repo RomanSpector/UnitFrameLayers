@@ -4,7 +4,7 @@ local LibTimer   = LibStub:GetLibrary("AceTimer-3.0");
 
 local callbackTime = 0.1;
 
-PowerBarColor = {};
+PowerBarColor = PowerBarColor or {};
 PowerBarColor["MANA"] = { r = 0.00, g = 0.00, b = 1.00 };
 PowerBarColor["RAGE"] = { r = 1.00, g = 0.00, b = 0.00, fullPowerAnim=true };
 PowerBarColor["FOCUS"] = { r = 1.00, g = 0.50, b = 0.25, fullPowerAnim=true };
@@ -195,7 +195,7 @@ local function LibEventCallback(self, event, ... )
     if ( event == "HealComm_HealStarted" or event == "HealComm_HealStopped" ) then
         C_TimeCallback(self);
     elseif ( event == "EffectApplied" ) then
-        if ( arg1 == UnitGUID(self.unit) ) then
+        if ( arg3 == UnitGUID(self.unit) ) then
             C_TimeCallback(self);
         end
     elseif ( event == "HealComm_HealUpdated" )
