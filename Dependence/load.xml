@@ -6,7 +6,7 @@
 
   <Script file="MathUtil.lua"/>
   <Script file="Mixin.lua"/>
-  <Script file="SpellPowerCost.lua"/>
+  <Script file="GetSpellPowerCost.lua"/>
   <Script file="AnimatedHealthLossMixin.lua"/>
 
 </Ui>
