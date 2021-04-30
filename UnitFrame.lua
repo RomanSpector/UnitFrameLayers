@@ -1,8 +1,5 @@
 local LibAbsorb  = LibStub:GetLibrary("AbsorbsMonitor-1.0");
 local HealComm   = LibStub:GetLibrary("LibHealComm-4.0");
-local LibTimer   = LibStub:GetLibrary("AceTimer-3.0");
-
-local callbackTime = 0.1;
 
 PowerBarColor = PowerBarColor or {};
 PowerBarColor["RAGE"] = { r = 1.00, g = 0.00, b = 0.00, fullPowerAnim=true };
@@ -177,23 +174,17 @@ local function UnitFrameHealPredictionBars_Update(frame)
 	UnitFrameUtil_UpdateFillBar(frame, appendTexture, frame.totalAbsorbBar, totalAbsorb)
 end
 
-local function C_TimeCallback(self)
-	LibTimer:ScheduleTimer(function()
-		UnitFrameHealPredictionBars_Update(self)
-	end, callbackTime);
-end
-
 local function LibEventCallback(self, event, ... )
     local arg1, arg2, arg3, arg4, arg5 = ...;
-    if ( not UnitExists(self.unit) ) then
+    if ( self.unit ) then
         return;
     end
 
     if ( event == "HealComm_HealStarted" or event == "HealComm_HealStopped" ) then
-        C_TimeCallback(self);
+        UnitFrameHealPredictionBars_Update(self)
     elseif ( event == "EffectApplied" ) then
         if ( arg3 == UnitGUID(self.unit) ) then
-            C_TimeCallback(self);
+            UnitFrameHealPredictionBars_Update(self)
         end
     elseif ( event == "HealComm_HealUpdated" )
         or ( event == "HealComm_HealStarted" )
@@ -201,7 +192,7 @@ local function LibEventCallback(self, event, ... )
         or ( event == "HealComm_ModifierChanged" )
         or ( event == "HealComm_GUIDDisappeared" ) then
             if ( arg5 == UnitGUID(self.unit) ) then
-                C_TimeCallback(self);
+                UnitFrameHealPredictionBars_Update(self)
             end
     end
 end
@@ -375,20 +366,20 @@ local function UnitFrameUtil_UpdateManaFillBar(frame, previousTexture, bar, amou
 	return UnitFrameUtil_UpdateFillBarBase(frame, frame.manabar, previousTexture, bar, amount, barOffsetXPercent);
 end
 
-local function UnitFrameManaCostPredictionBars_Update(frame, isStarting, startTime, endTime, spellID)
+local function UnitFrameManaCostPredictionBars_Update(frame, isStarting, startTime, endTime, name)
 	if (not frame.manabar or not frame.myManaCostPredictionBar) then
 		return;
 	end
 	local cost = 0;
 	if (not isStarting or startTime == endTime) then
-        local currentSpellID = select(9, UnitCastingInfo(frame.unit));
-        if(currentSpellID and frame.predictedPowerCost) then --if we're currently casting something with a power cost, then whatever cast
+        local currentSpell = UnitCastingInfo(frame.unit);
+        if(currentSpell and frame.predictedPowerCost) then --if we're currently casting something with a power cost, then whatever cast
 		    cost = frame.predictedPowerCost;                 --just finished was allowed while casting, don't reset the original cast
         else
             frame.predictedPowerCost = nil;
         end
 	else
-		local costTable = GetSpellPowerCost(spellID);
+		local costTable = GetSpellPowerCost(name);
 		for _, costInfo in pairs(costTable) do
 			if (costInfo.type == frame.manabar.powerType) then
 				cost = costInfo.cost;
@@ -514,8 +505,8 @@ hooksecurefunc("UnitFrame_OnEvent", function(self, event, ...)
 	if ( event == "UNIT_SPELLCAST_START" or event == "UNIT_SPELLCAST_STOP" or event == "UNIT_SPELLCAST_FAILED" or event == "UNIT_SPELLCAST_SUCCEEDED" ) then
 		local unit = ...;
 		if ( UnitIsUnit(unit, "player") ) then
-			local name, text, texture, startTime, endTime, isTradeSkill, castID, notInterruptible, spellID = UnitCastingInfo(unit);
-			UnitFrameManaCostPredictionBars_Update(self, event == "UNIT_SPELLCAST_START", startTime, endTime, spellID);
+			local name, text, texture, startTime, endTime, isTradeSkill, castID, notInterruptible = UnitCastingInfo(unit);
+			UnitFrameManaCostPredictionBars_Update(self, event == "UNIT_SPELLCAST_START", startTime, endTime, name);
 		end
 	end
 end)
