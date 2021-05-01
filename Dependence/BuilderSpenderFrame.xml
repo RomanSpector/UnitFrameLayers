@@ -27,7 +27,7 @@
     <Size x="119" y="12"/>
     <Scripts>
       <OnLoad>
-        Mixin(self, FullResourcePulse)
+        Mixin(self, FullResourcePulse);
       </OnLoad>
     </Scripts>
     <Frames>
@@ -87,13 +87,13 @@
                   SpikeFrame.AlertSpikeStay.SpikeAnim:Play();
               end
               self.SpikeAnim.Stop = function()
-                  SpikeFrame.BigSpikeGlow.SpikeAnim:Stop()
-                  SpikeFrame.AlertSpikeStay.SpikeAnim:Stop()
+                  SpikeFrame.BigSpikeGlow.SpikeAnim:Stop();
+                  SpikeFrame.AlertSpikeStay.SpikeAnim:Stop();
               end
               self.SpikeAnim.IsPlaying = function()
-                  local a = SpikeFrame.BigSpikeGlow.SpikeAnim:IsPlaying()
-                  local b = SpikeFrame.AlertSpikeStay.SpikeAnim:IsPlaying()
-                  return a or b
+                  local a = SpikeFrame.BigSpikeGlow.SpikeAnim:IsPlaying();
+                  local b = SpikeFrame.AlertSpikeStay.SpikeAnim:IsPlaying();
+                  return a or b;
               end
           </OnLoad>
         </Scripts>
@@ -148,13 +148,13 @@
                   PulseFrame.SoftGlow.PulseAnim:Play();
               end
               self.PulseAnim.Stop = function()
-                  PulseFrame.YellowGlow.PulseAnim:Stop()
-                  PulseFrame.SoftGlow.PulseAnim:Stop()
+                  PulseFrame.YellowGlow.PulseAnim:Stop();
+                  PulseFrame.SoftGlow.PulseAnim:Stop();
               end
               self.PulseAnim.IsPlaying = function()
-                  local a = PulseFrame.YellowGlow.PulseAnim:IsPlaying()
-                  local b = PulseFrame.SoftGlow.PulseAnim:IsPlaying()
-                  return a or b
+                  local a = PulseFrame.YellowGlow.PulseAnim:IsPlaying();
+                  local b = PulseFrame.SoftGlow.PulseAnim:IsPlaying();
+                  return a or b;
               end
           </OnLoad>
         </Scripts>

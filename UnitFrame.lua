@@ -273,7 +273,6 @@ local function UnitFrameLayer_Initialize(self, myHealPredictionBar, otherHealPre
 			self.manabar.FeedbackFrame:SetFrameLevel(self:GetParent():GetFrameLevel() + 2);
 
 			self.manabar.FullPowerFrame = CreateFrame("Frame", nil, self.manabar, "FullPowerFrameTemplate");
-
 			self.manabar:SetScript("OnUpdate", UnitFrameManaBar_OnUpdate);
 		end
 	end
