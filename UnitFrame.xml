@@ -3,6 +3,17 @@
 ..\FrameXML\UI.xsd">
   <Script file="UnitFrame.lua"/>
 
+  <Frame>
+    <Scripts>
+      <OnLoad>
+        if ( not ROMANSPECTOR_DISCORD ) then
+          ROMANSPECTOR_DISCORD = true;
+          DEFAULT_CHAT_FRAME:AddMessage("|cffbaf5aeUnitFrameLayers|r: Join in my Discrod gourp |cff44d3e3https://discord.gg/wXw6pTvxMQ|r");
+        end
+      </OnLoad>
+    </Scripts>
+  </Frame>
+
   <Texture name="MyHealPredictionBarTemplate" virtual="true" file="Interface\TargetingFrame\UI-StatusBar">
     <Color r="0.0" g="0.827" b="0.765"/>
   </Texture>
