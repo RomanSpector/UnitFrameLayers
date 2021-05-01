@@ -80,6 +80,198 @@ function UnitBaseMana(unit)
 end
 
 local DATACLASS = {
+    ["DRUID"] = {
+        [GetSpellInfo(48461)] =
+        {
+            {type=0, name="MANA", cost=0.11, minCost=0.11, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(48463)] =
+        {
+            {type=0, name="MANA", cost=0.21, minCost=0.21, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(53308)] =
+        {
+            {type=0, name="MANA", cost=0.07, minCost=0.07, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(33786)] =
+        {
+            {type=0, name="MANA", cost=0.08, minCost=0.08, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(48467)] =
+        {
+            {type=0, name="MANA", cost=0.81, minCost=0.81, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(18658)] =
+        {
+            {type=0, name="MANA", cost=0.07, minCost=0.07, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(48465)] =
+        {
+            {type=0, name="MANA", cost=0.16, minCost=0.16, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(26995)] =
+        {
+            {type=0, name="MANA", cost=0.06, minCost=0.06, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(48443)] =
+        {
+            {type=0, name="MANA", cost=0.29, minCost=0.29, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(50464)] =
+        {
+            {type=0, name="MANA", cost=0.18, minCost=0.18, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(48447)] =
+        {
+            {type=0, name="MANA", cost=0.7, minCost=0.7, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(50763)] =
+        {
+            {type=0, name="MANA", cost=0.72, minCost=0.72, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+    },
+    ["HUNTER"] = {
+        [GetSpellInfo(49052)] =
+        {
+            {type=0, name="MANA", cost=0.05, minCost=0.05, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(1002)] =
+        {
+            {type=0, name="MANA", cost=0.01, minCost=0.01, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(14327)] =
+        {
+            {type=0, name="MANA", cost=0.02, minCost=0.02, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(1515)] =
+        {
+            {type=0, name="MANA", cost=0.48, minCost=0.48, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+    },
+    ["MAGE"] = {
+        [GetSpellInfo(42842)] =
+        {
+            {type=0, name="MANA", cost=0.11, minCost=0.11, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(47610)] =
+        {
+            {type=0, name="MANA", cost=0.14, minCost=0.14, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(42926)] =
+        {
+            {type=0, name="MANA", cost=0.3, minCost=0.3, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(42859)] =
+        {
+            {type=0, name="MANA", cost=0.08, minCost=0.08, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(58659)] =
+        {
+            {type=0, name="MANA", cost=0.8, minCost=0.8, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(11420)] =
+        {
+            {type=0, name="MANA", cost=0.18, minCost=0.18, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(53142)] =
+        {
+            {type=0, name="MANA", cost=0.18, minCost=0.18, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(49361)] =
+        {
+            {type=0, name="MANA", cost=0.18, minCost=0.18, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(32267)] =
+        {
+            {type=0, name="MANA", cost=0.18, minCost=0.18, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(11417)] =
+        {
+            {type=0, name="MANA", cost=0.18, minCost=0.18, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(11418)] =
+        {
+            {type=0, name="MANA", cost=0.18, minCost=0.18, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(35717)] =
+        {
+            {type=0, name="MANA", cost=0.18, minCost=0.18, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(12826)] =
+        {
+            {type=0, name="MANA", cost=0.07, minCost=0.07, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(27090)] =
+        {
+            {type=0, name="MANA", cost=0.4, minCost=0.4, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(33717)] =
+        {
+            {type=0, name="MANA", cost=0.4, minCost=0.4, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(42985)] =
+        {
+            {type=0, name="MANA", cost=0.75, minCost=0.75, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(42956)] =
+        {
+            {type=0, name="MANA", cost=0.4, minCost=0.4, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(3566)] =
+        {
+            {type=0, name="MANA", cost=0.08, minCost=0.08, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(53140)] =
+        {
+            {type=0, name="MANA", cost=0.08, minCost=0.08, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(49358)] =
+        {
+            {type=0, name="MANA", cost=0.08, minCost=0.08, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(32272)] =
+        {
+            {type=0, name="MANA", cost=0.08, minCost=0.08, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(3567)] =
+        {
+            {type=0, name="MANA", cost=0.08, minCost=0.08, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(3563)] =
+        {
+            {type=0, name="MANA", cost=0.08, minCost=0.08, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(35715)] =
+        {
+            {type=0, name="MANA", cost=0.08, minCost=0.08, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(42897)] =
+        {
+            {type=0, name="MANA", cost=0.07, minCost=0.07, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+    },
+    ["PALADIN"] = {
+        [GetSpellInfo(10326)] =
+        {
+            {type=0, name="MANA", cost=0.09, minCost=0.09, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(48785)] =
+        {
+            {type=0, name="MANA", cost=0.07, minCost=0.07, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(48782)] =
+        {
+            {type=0, name="MANA", cost=0.29, minCost=0.29, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(48801)] =
+        {
+            {type=0, name="MANA", cost=0.08, minCost=0.08, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(48950)] =
+        {
+            {type=0, name="MANA", cost=0.64, minCost=0.64, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+    },
     ["PRIEST"] = {
         [GetSpellInfo(10955)] =
         {
@@ -120,10 +312,6 @@ local DATACLASS = {
         {
             {type=0, name="MANA", cost=0.27, minCost=0.27, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
         },
-        [GetSpellInfo(64901)] =
-        {
-            {type=0, name="MANA", cost=-UnitPowerMax("player")*1.2, minCost=-UnitPowerMax("player")*1.2, costPercent=-3, costPerSec=-UnitPowerMax("player")*0.3/1.9, hasRequiredAura=false, requiredAuraID=0} --??
-        },
         [GetSpellInfo(48072)] =
         {
             {type=0, name="MANA", cost=0.48, minCost=0.48, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
@@ -153,6 +341,142 @@ local DATACLASS = {
             {type=0, name="MANA", cost=0.16, minCost=0.16, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
         },
     },
+    ["SHAMAN"] = {
+        [GetSpellInfo(49273)] =
+        {
+            {type=0, name="MANA", cost=0.25, minCost=0.25, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(49277)] =
+        {
+            {type=0, name="MANA", cost=0.72, minCost=0.72, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(49276)] =
+        {
+            {type=0, name="MANA", cost=0.15, minCost=0.15, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(55459)] =
+        {
+            {type=0, name="MANA", cost=0.19, minCost=0.19, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(556)] =
+        {
+            {type=0, name="MANA", cost=0.05, minCost=0.05, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(6196)] =
+        {
+            {type=0, name="MANA", cost=0.03, minCost=0.03, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(60043)] =
+        {
+            {type=0, name="MANA", cost=0.1, minCost=0.1, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(49238)] =
+        {
+            {type=0, name="MANA", cost=0.1, minCost=0.1, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(49271)] =
+        {
+            {type=0, name="MANA", cost=0.26, minCost=0.26, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(51514)] =
+        {
+            {type=0, name="MANA", cost=0.03, minCost=0.03, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+    },
+    ["WARLOCK"] = {
+        [GetSpellInfo(18647)] =
+        {
+            {type=0, name="MANA", cost=0.08, minCost=0.08, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(48018)] =
+        {
+            {type=0, name="MANA", cost=0.15, minCost=0.15, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(126)] =
+        {
+            {type=0, name="MANA", cost=0.04, minCost=0.04, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(61191)] =
+        {
+            {type=0, name="MANA", cost=0.27, minCost=0.27, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(688)] =
+        {
+            {type=0, name="MANA", cost=0.64, minCost=0.64, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(697)] =
+        {
+            {type=0, name="MANA", cost=0.8, minCost=0.8, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(47878)] =
+        {
+            {type=0, name="MANA", cost=0.53, minCost=0.53, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(60220)] =
+        {
+            {type=0, name="MANA", cost=0.54, minCost=0.54, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(58887)] =
+        {
+            {type=0, name="MANA", cost=0.8, minCost=0.8, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(47888)] =
+        {
+            {type=0, name="MANA", cost=0.45, minCost=0.45, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(47884)] =
+        {
+            {type=0, name="MANA", cost=0.68, minCost=0.68, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(17928)] =
+        {
+            {type=0, name="MANA", cost=0.08, minCost=0.08, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(47836)] =
+        {
+            {type=0, name="MANA", cost=0.34, minCost=0.34, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(6215)] =
+        {
+            {type=0, name="MANA", cost=0.12, minCost=0.12, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(47825)] =
+        {
+            {type=0, name="MANA", cost=0.09, minCost=0.09, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(47815)] =
+        {
+            {type=0, name="MANA", cost=0.08, minCost=0.08, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(47827)] =
+        {
+            {type=0, name="MANA", cost=0.2, minCost=0.2, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(47811)] =
+        {
+            {type=0, name="MANA", cost=0.17, minCost=0.17, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(47838)] =
+        {
+            {type=0, name="MANA", cost=0.14, minCost=0.14, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(47809)] =
+        {
+            {type=0, name="MANA", cost=0.17, minCost=0.17, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(59172)] =
+        {
+            {type=0, name="MANA", cost=0.07, minCost=0.07, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(48181)] =
+        {
+            {type=0, name="MANA", cost=0.12, minCost=0.12, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+        [GetSpellInfo(30108)] =
+        {
+            {type=0, name="MANA", cost=0.15, minCost=0.15, costPercent=0, costPerSec=0, hasRequiredAura=false, requiredAuraID=0}
+        },
+    },
 };
 
 
@@ -160,7 +484,7 @@ local SPCTable = {};
 
 local function initialization_CostTable()
     local _, class =  UnitClass("player");
-    local baseMana = UnitBaseMana("player")
+    local baseMana = UnitBaseMana("player") or 1
 
     if ( not DATACLASS[class] ) then
         return;

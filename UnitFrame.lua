@@ -270,7 +270,7 @@ local function UnitFrameLayer_Initialize(self, myHealPredictionBar, otherHealPre
 		if ( self.manabar ) then
 			self.manabar.FeedbackFrame = CreateFrame("Frame", nil, self.manabar, "BuilderSpenderFrame");
 			self.manabar.FeedbackFrame:SetAllPoints();
-			self.manabar.FeedbackFrame:SetFrameLevel(self:GetParent():GetFrameLevel() + 1);
+			self.manabar.FeedbackFrame:SetFrameLevel(self:GetParent():GetFrameLevel() + 2);
 
 			self.manabar.FullPowerFrame = CreateFrame("Frame", nil, self.manabar, "FullPowerFrameTemplate");
 
