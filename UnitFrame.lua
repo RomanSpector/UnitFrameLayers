@@ -176,7 +176,7 @@ end
 
 local function LibEventCallback(self, event, ... )
     local arg1, arg2, arg3, arg4, arg5 = ...;
-    if ( self.unit ) then
+    if ( not self.unit) then
         return;
     end
 
