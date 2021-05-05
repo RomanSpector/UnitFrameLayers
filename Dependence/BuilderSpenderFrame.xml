@@ -113,10 +113,8 @@
               </Anchors>
               <Animations>
                 <AnimationGroup parentKey="PulseAnim" looping="REPEAT">
-                  <Alpha childKey="YellowGlow" duration="0" order="1" change="-1"/>
                   <Alpha childKey="YellowGlow" duration="0.1" order="1" change="1"/>
                   <Translation childKey="YellowGlow" smoothing="OUT" duration="0.5" order="1" offsetX="20" offsetY="0"/>
-                  <Alpha childKey="YellowGlow" startDelay="0.4" duration="0" order="1" change="1"/>
                   <Alpha childKey="YellowGlow" startDelay="0.4" duration="0.1" order="1" change="-1"/>
                 </AnimationGroup>
               </Animations>
