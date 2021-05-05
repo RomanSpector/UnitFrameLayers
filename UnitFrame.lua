@@ -180,32 +180,52 @@ local function LibEventCallback(self, event, ... )
         return;
     end
 
-    if ( event == "HealComm_HealStarted" or event == "HealComm_HealStopped" ) then
-        UnitFrameHealPredictionBars_Update(self)
-    elseif ( event == "EffectApplied" ) then
-        if ( arg3 == UnitGUID(self.unit) ) then
-            UnitFrameHealPredictionBars_Update(self)
-        end
-    elseif ( event == "HealComm_HealUpdated" )
-        or ( event == "HealComm_HealStarted" )
-        or ( event == "HealComm_HealDelayed" )
-        or ( event == "HealComm_ModifierChanged" )
-        or ( event == "HealComm_GUIDDisappeared" ) then
-            if ( arg5 == UnitGUID(self.unit) ) then
-                UnitFrameHealPredictionBars_Update(self)
-            end
-    end
+	if ( event == "EffectApplied" and arg3 == UnitGUID(self.unit) ) then
+		UnitFrameHealPredictionBars_Update(self);
+	elseif ( arg1 == UnitGUID(self.unit) ) then
+		if ( event == "UnitUpdated" ) then
+			UnitFrameHealPredictionBars_Update(self);
+		elseif ( event == "EffectRemoved" ) then
+			UnitFrameHealPredictionBars_Update(self);
+		elseif ( event == "UnitCleared" ) then
+			UnitFrameHealPredictionBars_Update(self);
+		elseif ( event == "AreaCreated" ) then
+			UnitFrameHealPredictionBars_Update(self);
+		elseif ( event == "AreaCleared" ) then
+			UnitFrameHealPredictionBars_Update(self);
+		elseif ( event == "COMPACT_UNIT_FRAME_UNIT_AURA" ) then
+			UnitFrameHealPredictionBars_Update(self);
+		end
+	elseif ( arg5 == UnitGUID(self.unit) ) then
+		if ( event == "HealComm_HealUpdated" ) then
+			UnitFrameHealPredictionBars_Update(self);
+		elseif ( event == "HealComm_HealStarted" ) then
+			UnitFrameHealPredictionBars_Update(self);
+		elseif ( event == "HealComm_HealDelayed" ) then
+			UnitFrameHealPredictionBars_Update(self);
+		elseif ( event == "HealComm_ModifierChanged" ) then
+			UnitFrameHealPredictionBars_Update(self);
+		elseif ( event == "HealComm_GUIDDisappeared" ) then
+			UnitFrameHealPredictionBars_Update(self);
+		end
+	end
 end
 
 local function UnitFrame_RegisterCallback(self)
-    LibAbsorb.RegisterCallback(self, "EffectApplied", LibEventCallback, self);
+	LibAbsorb.RegisterCallback(self, "EffectApplied", LibEventCallback, self);
+	LibAbsorb.RegisterCallback(self, "EffectUpdated", LibEventCallback, self);
+	LibAbsorb.RegisterCallback(self, "EffectRemoved", LibEventCallback, self);
+	LibAbsorb.RegisterCallback(self, "UnitUpdated", LibEventCallback, self);
+	LibAbsorb.RegisterCallback(self, "UnitCleared", LibEventCallback, self);
+	LibAbsorb.RegisterCallback(self, "AreaCreated", LibEventCallback, self);
+	LibAbsorb.RegisterCallback(self, "AreaCleared", LibEventCallback, self);
 
-    HealComm.RegisterCallback(self, "HealComm_HealStarted", LibEventCallback, self);
-    HealComm.RegisterCallback(self, "HealComm_HealUpdated", LibEventCallback, self);
-    HealComm.RegisterCallback(self, "HealComm_HealDelayed", LibEventCallback, self);
-    HealComm.RegisterCallback(self, "HealComm_HealStopped", LibEventCallback, self);
-    HealComm.RegisterCallback(self, "HealComm_ModifierChanged", LibEventCallback, self);
-    HealComm.RegisterCallback(self, "HealComm_GUIDDisappeared", LibEventCallback, self);
+	HealComm.RegisterCallback(self, "HealComm_HealStarted", LibEventCallback, self);
+	HealComm.RegisterCallback(self, "HealComm_HealUpdated", LibEventCallback, self);
+	HealComm.RegisterCallback(self, "HealComm_HealDelayed", LibEventCallback, self);
+	HealComm.RegisterCallback(self, "HealComm_HealStopped", LibEventCallback, self);
+	HealComm.RegisterCallback(self, "HealComm_ModifierChanged", LibEventCallback, self);
+	HealComm.RegisterCallback(self, "HealComm_GUIDDisappeared", LibEventCallback, self);
 end
 
 local function UnitFrameLayer_Initialize(self, myHealPredictionBar, otherHealPredictionBar, totalAbsorbBar, totalAbsorbBarOverlay,
