@@ -197,7 +197,7 @@ local function ClearCommScalingCooldown()
 end
 
 local function DeepTableCopy(src)
-	dest = {};
+	local dest = {};
 	
 	for k, v in pairs(src) do
 		if(type(k) == "table") then
