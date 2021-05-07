@@ -203,6 +203,8 @@ local function LibEventCallback(self, event, ... )
 			UnitFrameHealPredictionBars_Update(self);
 		elseif ( event == "HealComm_HealDelayed" ) then
 			UnitFrameHealPredictionBars_Update(self);
+		elseif ( event == "HealComm_HealStopped" ) then
+			UnitFrameHealPredictionBars_Update(self);
 		elseif ( event == "HealComm_ModifierChanged" ) then
 			UnitFrameHealPredictionBars_Update(self);
 		elseif ( event == "HealComm_GUIDDisappeared" ) then
