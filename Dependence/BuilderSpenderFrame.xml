@@ -46,7 +46,6 @@
               </Anchors>
               <Animations>
                 <AnimationGroup parentKey="SpikeAnim" setToFinalAlpha="true">
-                  <Alpha childKey="BigSpikeGlow" smoothing="IN" duration="0" order="1" change="-1"/>
                   <Alpha childKey="BigSpikeGlow" smoothing="IN" duration="0.25" order="1" change="1"/>
                   <Scale childKey="BigSpikeGlow" smoothing="NONE" duration="0" order="1" scaleX="0.25" scaleY="0.25"/>
                   <Scale childKey="BigSpikeGlow" smoothing="NONE" duration="0.1" order="1" scaleX="1.5" scaleY="1.5">
@@ -127,10 +126,8 @@
               </Anchors>
               <Animations>
                 <AnimationGroup parentKey="PulseAnim" looping="REPEAT">
-                  <Alpha childKey="SoftGlow" duration="0" order="1" change="-1"/>
                   <Alpha childKey="SoftGlow" duration="0.1" order="1" change="1"/>
                   <Translation childKey="SoftGlow" smoothing="OUT" duration="0.5" order="1" offsetX="20" offsetY="0"/>
-                  <Alpha childKey="SoftGlow" startDelay="0.4" duration="0" order="1" change="1"/>
                   <Alpha childKey="SoftGlow" startDelay="0.4" duration="0.1" order="1" change="-1"/>
                 </AnimationGroup>
               </Animations>
@@ -160,7 +157,6 @@
     </Frames>
     <Animations>
       <AnimationGroup parentKey="FadeoutAnim" setToFinalAlpha="true">
-        <Alpha change="1" duration="0" order="1"/>
         <Alpha change="-1" duration="0.5" order="1"/>
         <Scripts>
           <OnFinished>
