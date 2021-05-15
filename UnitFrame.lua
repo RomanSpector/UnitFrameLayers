@@ -338,7 +338,7 @@ function UnitFrameManaBar_OnUpdate(self)
 		local predictedCost = self:GetParent().predictedPowerCost;
 		local currValue = UnitPower(self.unit, self.powerType);
 		if (predictedCost) then
-			currValue = currValue - predictedCost;
+			currValue = currValue - Round(predictedCost);
 		end
 		if ( currValue ~= self.currValue or self.forceUpdate ) then
 			self.forceUpdate = nil;
