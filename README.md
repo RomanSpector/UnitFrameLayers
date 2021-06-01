@@ -1,9 +1,9 @@
 # UnitFrameLayers
 
-## Backport RaidFrame layrs texture from retail
-## Open -main folder in zip and copy CompactRaidFrame folder to AddOns
+## Backport UnitFrame layrs texture and animations from retail
+## Open -main folder in zip and copy UnitFrameLayers folder to AddOns
 
-## [Download](https://github.com/RomanSpector/CompactRaidFrame/archive/refs/heads/main.zip)
+## [Download](https://github.com/RomanSpector/UnitFrameLayers/archive/refs/heads/main.zip)
 
 ## [Join my Discord](https://discord.gg/wXw6pTvxMQ)
 
